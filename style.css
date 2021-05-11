@@ -83,6 +83,7 @@ footer{
 }
 
 #rightCol {
+    position: relative;
     grid-area: rightCol;
     padding-left: 50px;
 }
@@ -638,8 +639,8 @@ p span.italic {
 
 #experienceSvg{
     position: absolute;
-    left: 450px;
-    top: 280px;
+    left: -10px;
+    top: -20px;
 }
 
 

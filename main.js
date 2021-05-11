@@ -960,7 +960,7 @@ initAnimation();
 
 /* ---------------------------------- sound --------------------------------- */
 const popMenu = new Audio('./sound/PopMenu.mp3');
-const bubble = new Audio('./sound/Pop01.mp3');
+const bubble = new Audio('./sound/xp.mp3');
 const gameBoySound = new Audio('./sound/gameBoy.mp3');
 const gameBoyOff = document.getElementById('gameBoyOff');
 const pairiSound = new Audio('./sound/PairiLogo.mp3');
