@@ -20,13 +20,15 @@ strong {
 }
 
 .wrapper {
-    width: 95vh;
+    width: 1000px;
     padding: 0 15px;
     margin: 0 auto;
     overflow: hidden;
     box-shadow: 24px 26px 27px -9px rgba(0, 0, 0, 0.14);
     -webkit-box-shadow: 24px 26px 27px -9px rgba(0, 0, 0, 0.14);
     -moz-box-shadow: 24px 26px 27px -9px rgba(0, 0, 0, 0.14);
+    transform: scale(0.95);
+    padding-bottom: 10px;
 }
 
 li {
@@ -88,11 +90,7 @@ footer{
     padding-left: 50px;
 }
 
-.wrapper {
-    transform: scale(0.95);
-    padding-bottom: 10px;
-    min-height: 1330px;
-}
+
 
 /* -------------------------------------------------------------------------- */
 /*                                     svg Position                           */
@@ -687,7 +685,7 @@ p span.italic {
 }
 #time4{
     position: absolute;
-    top: 310px;
+    top: 290px;
     font-size: 13px;
 }
 #time4 span{
@@ -699,7 +697,7 @@ p span.italic {
 }
 #time5{
     position: absolute;
-    top: 385px;
+    top: 365px;
     font-size: 13px;
 }
 #time5 span{
@@ -983,7 +981,7 @@ article#formation {
     }
 
     #experienceSvg{
-        top: 1600px;
+        top: 50px;
         left: 50px;
         transform: scale(1.3);
     }
