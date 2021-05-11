@@ -291,8 +291,8 @@ svg.fa-linkedin{
 header > div#borderHead {
     box-sizing: border-box; /* place les border DANS l'élé*/
     background-color: #7cbee0;
-    top: -920px;
-    left: -1035px;
+    top: -915px;
+    left: -990px;
     width: 3000px;
     position: absolute;
     display: flex;
@@ -395,7 +395,6 @@ header {
 #fullComp {
     transition: 0.3s;
     opacity: 0;
-    width: 850px;
 }
 
 div#fullComp {
@@ -865,7 +864,7 @@ article#formation {
 
 @media screen and (max-width: 850px)
 {
-    .headContent{
+    div.headContent{
         width: 850px;
         display: flex;
         justify-content: center;
@@ -904,7 +903,6 @@ article#formation {
     }
     .viewing{
         margin: 0;
-
     }
 
     .displayContact{
@@ -913,6 +911,7 @@ article#formation {
 
     footer{
         display: block;
+        width: 850px;
     }
     footer div{
         display: flex;
@@ -953,6 +952,7 @@ article#formation {
     }
 
     .wrapper{
+        width: 850px;
         padding: 0;
         margin: 0;
         transform: scale(1);
@@ -964,8 +964,12 @@ article#formation {
         max-height: none;
     }
 
-    #profil {
+    #fullComp{
+        width: 850px;
         margin: 0;
+    }
+
+    #profil {
         width: 850px;
         margin-top: 260px;
         margin-bottom: 25px;
@@ -1076,6 +1080,14 @@ article#formation {
 
 @media screen and (max-width: 414px)
 {   
+    div.headContent{
+        width: 414px;
+    }
+
+    footer {
+        width: 414px;
+    }
+
     #experienceSvg{
         display: none;
     }
@@ -1103,14 +1115,18 @@ article#formation {
         left: -1250px;
     }
 
-    #rightCol{
+    section#rightCol{
         height: 1100px;
+        width: 414px;
     }
 
     #grid{
         height: 2430px;
     }
 
+    #leftCol{
+        width: 414px;
+    }
 
 
     h3{
@@ -1136,6 +1152,11 @@ article#formation {
     #profil{
         margin: 0;
         height: 340px;
+        width: 414px;
+    }
+
+    #formation{
+        width: 414px;
     }
 
     #profil p, #other p{
