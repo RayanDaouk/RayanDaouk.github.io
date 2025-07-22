@@ -1,13 +1,14 @@
 import '../css/main.css';
 
+import { glitch } from './glitch.js';
+glitch();
+
 import { wave } from './power-bg.js';
 wave();
 
 import { gsapCarousel } from './carousel.js';
 gsapCarousel();
 
-import { glitch } from './glitch.js';
-glitch();
 
 import { btnEmitter } from './btn-emitter.js';
 btnEmitter();

@@ -3,6 +3,7 @@ function random(min, max) {
 }
 
 export function glitch() {
+  console.log('glitch');
   const logos = document.querySelectorAll('.carousel-item--logo');
   window.addEventListener('DOMContentLoaded', () => {
     logos.forEach(img => {
