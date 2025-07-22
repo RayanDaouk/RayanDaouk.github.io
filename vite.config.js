@@ -16,10 +16,10 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html')
       },
       output: {
-        // Génère des noms de fichiers cohérents
+        // Garde les noms originaux pour tous les fichiers
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]'
+        assetFileNames: 'assets/[name].[ext]'
       }
     },
     // Copie le CSS compilé dans le bon dossier
@@ -51,7 +51,6 @@ export default defineConfig({
       }
     },
     devSourcemap: true,
-    // En dev, utilise le CSS existant, en build compile le SCSS
     postcss: {}
   },
 
