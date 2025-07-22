@@ -7,7 +7,9 @@ import { gsapCarousel } from './carousel.js';
 gsapCarousel();
 
 import { glitch } from './glitch.js';
-glitch();
+document.addEventListener('DOMContentLoaded', () => {
+  glitch();
+});
 
 import { btnEmitter } from './btn-emitter.js';
 btnEmitter();
