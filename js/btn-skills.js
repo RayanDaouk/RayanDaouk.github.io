@@ -43,14 +43,14 @@ export function btnSkills() {
     const width = skillsCollision.offsetWidth;
     const height = skillsCollision.offsetHeight;
 
-    tvRed.style.maskSize = `${width}px ${height}px`;
-    tvRed.style.webkitMaskSize = `${width}px ${height}px`;
+    tvRed.style.maskSize = `${width}px auto`;
+    tvRed.style.webkitMaskSize = `${width}px auto`;
 
-    tvBlue.style.maskSize = `${width}px ${height}px`;
-    tvBlue.style.webkitMaskSize = `${width}px ${height}px`;
+    tvBlue.style.maskSize = `${width}px auto`;
+    tvBlue.style.webkitMaskSize = `${width}px auto`;
 
-    tvYellow.style.maskSize = `${width}px ${height}px`;
-    tvYellow.style.webkitMaskSize = `${width}px ${height}px`;
+    tvYellow.style.maskSize = `${width}px auto`;
+    tvYellow.style.webkitMaskSize = `${width}px auto`;
   }
 
   updateMaskSize();

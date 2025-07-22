@@ -1,0 +1,9 @@
+Branche de dev: cv-dev (le mieux est de repartir de master)
+npm run build
+npm run deploy pour tester en prod
+NE PAS OUBLIER DE REMETTRE cv-papier.pdf et favicon.ico après le build
+
+Pour le dev:
+npm run dev
+npm run sass
+

@@ -2,13 +2,15 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
-  // Configuration pour GitHub Pages
-  base: process.env.NODE_ENV === 'production' ? '/' : './',
+  // 👇 Pour un User Page, base doit rester /
+  base: '/',
 
+  // Dossier source
   root: '.',
   publicDir: 'public',
 
   build: {
+    // Dossier de sortie
     outDir: 'dist',
     assetsDir: 'assets',
     rollupOptions: {
@@ -16,13 +18,11 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html')
       },
       output: {
-        // Garde les noms originaux pour tous les fichiers
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: 'assets/[name].[ext]'
       }
     },
-    // Copie le CSS compilé dans le bon dossier
     cssCodeSplit: false
   },
 
@@ -43,20 +43,11 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // Options pour SCSS
-        additionalData: `
-          // Vous pouvez ajouter des imports globaux SCSS ici si nécessaire
-          // @import "@scss/variables.scss";
-        `
+        additionalData: ``
       }
     },
-    devSourcemap: true,
-    postcss: {}
+    devSourcemap: true
   },
 
-  // Optimisation des dépendances
-  optimizeDeps: {
-    include: [],
-    exclude: []
-  }
+  optimizeDeps: {}
 })

@@ -3,6 +3,7 @@ import '../css/main.css';
 import { glitch } from './glitch.js';
 glitch();
 
+
 import { wave } from './power-bg.js';
 wave();
 
