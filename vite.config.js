@@ -1,27 +1,63 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vite'
+import { resolve } from 'path'
 
 export default defineConfig({
-  base: '/',
+  // Configuration pour GitHub Pages
+  base: process.env.NODE_ENV === 'production' ? '/' : './',
+
+  root: '.',
+  publicDir: 'public',
+
   build: {
     outDir: 'dist',
-    assetsDir: '',
+    assetsDir: 'assets',
     rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html')
+      },
       output: {
-        entryFileNames: `index-[hash].js`,
-        chunkFileNames: `chunk-[hash].js`,
-        assetFileNames: ({ name }) => {
-          if (name && name.endsWith('.css')) {
-            return 'index-[hash][extname]';
-          }
-          return '[name]-[hash][extname]';
-        }
+        // Génère des noms de fichiers cohérents
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
       }
     },
-    sourcemap: false,
-    minify: 'esbuild'
+    // Copie le CSS compilé dans le bon dossier
+    cssCodeSplit: false
   },
+
   server: {
     port: 3000,
     open: true
+  },
+
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './'),
+      '@js': resolve(__dirname, './js'),
+      '@scss': resolve(__dirname, './scss'),
+      '@css': resolve(__dirname, './css')
+    }
+  },
+
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // Options pour SCSS
+        additionalData: `
+          // Vous pouvez ajouter des imports globaux SCSS ici si nécessaire
+          // @import "@scss/variables.scss";
+        `
+      }
+    },
+    devSourcemap: true,
+    // En dev, utilise le CSS existant, en build compile le SCSS
+    postcss: {}
+  },
+
+  // Optimisation des dépendances
+  optimizeDeps: {
+    include: [],
+    exclude: []
   }
-});
+})

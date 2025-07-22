@@ -5,8 +5,6 @@ export function dino() {
 
   if (!dino || !dinoTxt) return;
 
-  console.log('dinoTxt:', dinoTxt);
-
   dino.addEventListener('mouseenter', () => {
     dino.style.opacity = 0;
     dinoTxt.style.opacity = 1;
