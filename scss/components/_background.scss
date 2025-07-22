@@ -1,0 +1,86 @@
+@use '../tools/tools' as *;
+
+body {
+  background-color: $bg-gradient-color;
+  position: relative;
+}
+
+.gradient-limit,
+.patern,
+.mask-patern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.patern {
+  background:
+    url('../../assets/background/patern-components.png') repeat,
+    url('../../assets/background/patern-circuit.png') repeat;
+  z-index: 0;
+  background-position: 20% top;
+}
+
+.mask-patern {
+  z-index: 1;
+  mask: url('../../assets/background/mask-patern-circuit.png') repeat;
+  -webkit-mask: url('../../assets/background/mask-patern-circuit.png') repeat;
+  mask-size: auto;
+  -webkit-mask-size: auto;
+  overflow: hidden;
+  mask-position: 20% top;
+}
+
+#power {
+  position: fixed;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+
+  .pulse-wave {
+    position: absolute;
+    pointer-events: none;
+    border: 15px solid $wave-color;
+    width: 0;
+    height: auto;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: wave 1s ease;
+    aspect-ratio: 1/1;
+    @keyframes wave {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+      85% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        width: 115vw;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.gradient-limit {
+  z-index: 3;
+  background: linear-gradient(90deg,
+      rgba($bg-gradient-color, 1) 0%,
+      rgba($bg-gradient-color, 1) 5%,
+      transparent 20%,
+      transparent 53%,
+      transparent 80%,
+      rgba($bg-gradient-color, 1) 95%,
+      rgba($bg-gradient-color, 1) 100%);
+}
+.wrapper-cv {
+  background-color: $background-color;
+}

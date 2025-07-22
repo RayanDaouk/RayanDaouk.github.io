@@ -1,0 +1,24 @@
+@mixin font-face($family, $path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: '#{$family}';
+    src: url('#{$path}.woff2') format('woff2'),
+    url('#{$path}.woff') format('woff');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@include font-face('pressStart2p', '../assets/fonts/PressStart2P/PressStart2P-400');
+@include font-face('minecraft', '../assets/fonts/Minecraft/Minecraft-400');
+
+body {
+  font-family: 'pressStart2p', sans-serif;
+}
+
+.stack,
+.skills-terminal--content,
+#experiences--infos-right,
+#experiences--infos-left {
+  font-family: 'minecraft', 'pressStart2p', sans-serif;
+}

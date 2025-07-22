@@ -1,0 +1,29 @@
+html {
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+body {
+  position: relative;
+}
+
+h1,
+body,
+p {
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: block;
+}
+
+*,
+::after,
+::before {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}

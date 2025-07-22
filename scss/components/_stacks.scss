@@ -1,0 +1,186 @@
+@use '../tools/tools' as *;
+
+.stacks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3vw;
+  justify-content: center;
+  align-items: end;
+  margin-top: 3.9vw;
+
+  @include breakpoint(wide) {
+    gap: 43px;
+    margin-top: 56px;
+  }
+}
+
+.stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  transform: scale(1);
+  transition: transform .3s ease;
+
+  p {
+    margin-top: 1vw;
+    text-align: center;
+    font-size: 1.1vw;
+
+    @include breakpoint(wide) {
+      margin-top: 14px;
+      font-size: 16px;
+    }
+  }
+
+  &:hover {
+    transform: scale(.8);
+  }
+}
+
+// .stack--logo {
+//   max-height: 85px;
+// }
+
+.stack {
+  height: auto;
+
+  &:has(#drupal) {
+    aspect-ratio: 75 / 85;
+    width: 5.7%;
+    max-width: 75px;
+  }
+
+  &:has(#gulp) {
+    aspect-ratio: 45 / 113;
+    width: 3%;
+    max-width: 45px;
+  }
+
+  &:has(#webpack) {
+    aspect-ratio: 86 / 91;
+    width: 6%;
+    max-width: 86px;
+  }
+
+  &:has(#npm) {
+    aspect-ratio: 109 / 54;
+    width: 9%;
+    max-width: 109px;
+  }
+
+  &:has(#gsap) {
+    aspect-ratio: 130 / 54;
+    width: 7.9%;
+    max-width: 130px;
+  }
+
+  &:has(#reactjs) {
+    aspect-ratio: 134 / 113;
+    width: 8%;
+    max-width: 134px;
+  }
+
+  &:has(#photoshop) {
+    aspect-ratio: 80 / 79;
+    width: 6.5%;
+    max-width: 80px;
+  }
+}
+
+.btn-particule {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  aspect-ratio: 1/1;
+  animation: particule-born var(--duration) linear forwards;
+  z-index: var(--zIndex);
+
+  .square {
+    width: 100%;
+    height: 100%;
+
+    transform: scale(.8);
+  }
+}
+
+.particle {
+
+  &--drupal,
+  &--reactjs {
+    background-color: #b6eaff;
+
+    .square {
+      background-color: #152353;
+    }
+  }
+
+  &--npm {
+    background-color: #a61b1a;
+
+    .square {
+      background-color: #fef9f9;
+    }
+  }
+
+  &--webpack {
+    background-color: #165499;
+
+    .square {
+      background-color: #71caef;
+    }
+  }
+
+  &--gulp {
+    background-color: #d41618;
+
+    .square {
+      background-color: #febeba;
+    }
+  }
+
+  &--gsap {
+    background-color: #fef9f9;
+
+    .square {
+      background-color: #3e8420;
+    }
+  }
+
+  &--photoshop {
+    background-color: #71caef;
+
+    .square {
+      background-color: #517fbb;
+    }
+  }
+}
+
+@keyframes particule-born {
+  0% {
+    transform: translateY(0) scale(0);
+  }
+
+  50% {
+    transform: translateY(calc(var(--travelY) * 0.5)) scale(1);
+  }
+
+  100% {
+    transform: translateY(var(--travelY)) scale(0);
+  }
+}
+
+@keyframes scaling {
+
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(.8);
+  }
+}

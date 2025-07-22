@@ -1,0 +1,41 @@
+@use '../tools/tools' as *;
+
+#languages,
+.language--wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#languages {
+  margin-top: 6%;
+  gap: 2vw;
+    @include breakpoint(wide) {
+    gap: 29px;
+  }
+}
+
+.language--wrapper {
+  width: 18.2%;
+  font-size: .8vw;
+  color: $yellow-color;
+
+  @include breakpoint(wide) {
+    font-size: 12px;
+  }
+
+  img {
+    display: block;
+    margin-bottom: 2%;
+  }
+
+  p:not(:first-child) {
+    margin-top: 4%;
+  }
+}
+
+.flag {
+  aspect-ratio: 84 / 54;
+  width: 35%;
+  height: auto;
+}

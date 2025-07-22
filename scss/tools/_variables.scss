@@ -1,0 +1,27 @@
+$background-color: #1f1636;
+$bg-gradient-color: #100d19;
+$bg-carousel-color: #142252;
+$bg-carousel-motif-color: #4b75b3;
+$border-carousel-color: #93d3e6;
+$subtitle-color: #facc00;
+$yellow-color: #ffdf48;
+$wave-color: #00f2ff;
+$terminal-indentation-bg-color: #313336;
+$terminal-indentation-color: #808283;
+$terminal-bg-color: #232920;
+$terminal-select-color: #4063a8;
+$footer-bg-color: #130e1f;
+
+$breakpoints: (
+  small: 375px,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1280px,
+  wide: 1440px
+);
+
+:root {
+  @each $key, $value in $breakpoints {
+    --breakpoint-#{$key}: #{$value};
+  }
+}

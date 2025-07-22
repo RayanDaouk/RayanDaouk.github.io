@@ -1,0 +1,474 @@
+@use '../tools/tools' as *;
+
+#skills {
+  margin-top: 24px;
+  user-select: none;
+  display: flex;
+  padding-left: 4vw;
+  @include breakpoint(wide) {
+    padding-left: 58px;
+  }
+}
+
+#skills--left-side,
+#skills--right-side {
+  position: relative;
+  width: 50vw;
+  max-width: calc(1380px / 2);
+}
+
+.skills--televisions {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.skills--connectors,
+.skills--light {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: auto;
+  z-index: 0;
+}
+.skills--light {
+  animation: lightSkills 4s linear infinite;
+}
+
+.skills-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &:not(.isOff) {
+    +.skills--pixels {
+      img {
+        display: none !important;
+      }
+
+      .skills--pixels--monitor {
+        display: none;
+      }
+
+      +.skills--pixels-light {
+        display: none;
+      }
+    }
+  }
+}
+
+#skills--collisions {
+  z-index: 2;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    &:not(:first-child) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    path {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+#skills--red-on,
+#skills--blue-on,
+#skills--yellow-on {
+  pointer-events: none;
+  z-index: 2;
+
+  &.isOff {
+    display: none;
+  }
+}
+
+.skills--logo {
+  position: absolute;
+  width: 11%;
+  height: auto;
+}
+
+#skills--red-on {
+  .skills--logo {
+    top: 14%;
+    left: 32%;
+    transform: rotate(-8deg);
+  }
+}
+
+#skills--blue-on {
+  .skills--logo {
+    top: 40%;
+    left: 18%;
+    transform: skewY(5deg);
+  }
+}
+
+#skills--yellow-on {
+  .skills--logo {
+    top: 71%;
+    left: 37%;
+    transform: rotate(13deg);
+  }
+}
+
+// ------------------------
+// Monitor turn on Fx (under mask of pixels screen)
+// ------------------------
+.skills--pixels--monitor {
+  position: absolute;
+  width: 25%;
+  height: 17%;
+  background-color: white;
+  transform-origin: center;
+  z-index: 1;
+}
+
+// ------------------------
+// Pixels screen Fx
+// ------------------------
+.skills--pixels {
+  $toggleMonitorDuration: .35s;
+  position: absolute;
+  display: block;
+  width: 100%; // ou taille fixe si nécessaire
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    width: 59.42%;
+    height: auto;
+    display: none;
+  }
+
+  &.screen-start {
+    img {
+      display: block;
+    }
+  }
+
+  &#tv-red,
+  &#tv-blue,
+  &#tv-yellow {
+    top: 0;
+    left: 0;
+    mask-repeat: no-repeat;
+    mask-position: top;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: top;
+  }
+
+  &#tv-red {
+    mask-image: url('../../assets/skills/masks/masktv1.svg');
+    -webkit-mask-image: url('../../assets/skills/masks/masktv1.svg');
+
+    .skills--pixels--monitor {
+      top: 11%;
+      left: 25%;
+      transform: rotate(-8.5deg) scaleY(0) scaleX(0);
+
+      &.on {
+        animation: monitorToggleRed $toggleMonitorDuration ease forwards;
+      }
+
+      &.off {
+        animation: monitorToggleRed $toggleMonitorDuration ease reverse backwards;
+      }
+    }
+
+    img {
+      top: 11%;
+      left: 0;
+      transform:
+        rotate3d(0, 1, .2, -36deg) translateY(0%) scaleY(1);
+      animation: scanLineRed 6s linear infinite;
+    }
+  }
+
+  &#tv-blue {
+    mask-image: url('../../assets/skills/masks/masktv2.svg');
+    -webkit-mask-image: url('../../assets/skills/masks/masktv2.svg');
+
+    .skills--pixels--monitor {
+      top: 36.5%;
+      left: 11%;
+      transform: rotate3d(-1, -1, -0, 30deg) scaleY(0) scaleX(0);
+
+      &.on {
+        animation: monitorToggleBlue $toggleMonitorDuration ease forwards;
+      }
+
+      &.off {
+        animation: monitorToggleBlue $toggleMonitorDuration ease reverse backwards;
+      }
+    }
+
+    img {
+      top: 35%;
+      left: 0;
+      transform:
+        skew(12deg) rotate(5deg) translateY(0) scaleY(1);
+      animation: scanLineBlue 6s steps(50, start) infinite;
+    }
+  }
+
+  &#tv-yellow {
+    mask-image: url('../../assets/skills/masks/masktv3.svg');
+    -webkit-mask-image: url('../../assets/skills/masks/masktv3.svg');
+
+    .skills--pixels--monitor {
+      bottom: 15%;
+      left: 30%;
+      transform: rotate3d(0, 0, 1, 14deg) scaleY(0) scaleX(0);
+
+      &.on {
+        animation: monitorToggleYellow $toggleMonitorDuration ease forwards;
+      }
+
+      &.off {
+        animation: monitorToggleYellow $toggleMonitorDuration ease reverse backwards;
+      }
+    }
+
+    img {
+      bottom: -39%;
+      left: 0;
+      transform:
+        rotate(14deg) translateY(0) scaleY(1);
+      animation: scanLineYellow 6s linear infinite;
+    }
+  }
+}
+
+.skills--pixels-light {
+  position: absolute;
+  width: 40%;
+  z-index: 2;
+  top: 0%;
+  left: 7.5%;
+  pointer-events: none;
+  transform: scaleY(0);
+  transition: transform .15s;
+  animation: whiteLightTv .2s linear infinite;
+  animation-play-state: paused;
+
+  &.on {
+    transition-delay: .15s;
+    transform: scaleY(1);
+  }
+}
+
+#monitor-light-red {
+  width: 40%;
+  top: 0%;
+  left: 7.5%;
+  transform-origin: right center;
+}
+
+#monitor-light-blue {
+  width: 56%;
+  top: 18.5%;
+  left: 12.2%;
+  transform-origin: left 62%;
+}
+
+#monitor-light-yellow {
+  width: 47%;
+  top: 54.5%;
+  left: 7.8%;
+  transform-origin: right 54%;
+}
+
+@keyframes monitorToggleRed {
+  0% {
+    transform: rotate(-8.5deg) scaleY(0) scaleX(0);
+  }
+
+  50% {
+    transform: rotate(-8.5deg) scaleY(.025) scaleX(1);
+  }
+
+  99% {
+    transform: rotate(-8.5deg) scaleY(1) scaleX(1);
+  }
+
+  100% {
+    transform: rotate(-8.5deg) scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes whiteLightTv {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes monitorToggleBlue {
+  0% {
+    transform: rotate3d(-1, -1, -0, 30deg) scaleY(0) scaleX(0);
+  }
+
+  50% {
+    transform: rotate3d(-1, -1, -0, 30deg) scaleY(.025) scaleX(1);
+  }
+
+  99% {
+    transform: rotate3d(-1, -1, -0, 30deg) scaleY(1) scaleX(1);
+  }
+
+  100% {
+    transform: rotate3d(-1, -1, -0, 30deg) scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes monitorToggleYellow {
+  0% {
+    transform: rotate3d(0, 0, 1, 14deg) scaleY(0) scaleX(0);
+  }
+
+  50% {
+    transform: rotate3d(0, 0, 1, 14deg) scaleY(.025) scaleX(1);
+  }
+
+  99% {
+    transform: rotate3d(0, 0, 1, 14deg) scaleY(1) scaleX(1);
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 1, 14deg) scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes scanLineBlue {
+  0% {
+    transform:
+      skew(12deg) rotate(5deg) translateY(0%) scaleY(1) scaleX(1);
+  }
+
+  @for $i from 1 through 49 {
+    $p1: (
+      $i * 2%) - 0.01%; // exemple: $i = 1 → p1 = 1 * 2% - 0.01% = 1.99%.
+    $p2: $i * 2%; // // The second step point at the exact switch (2% for the first break, and 4, 6, ...)
+    $y1: -0.5 * (($i * 2) - 0.01) + 0%; // y1 & y2 are the translation Y value, 0% to -50%
+    $y2: -0.5 * $i * 2 + 0%;
+    $prev: if(($i - 1) % 2==0, 1, -1
+    ); // The scaleX value just *before* the switch: same as the previous segment
+  $next: if($i % 2==0, 1, -1); // The scaleX value after the switch: toggles between 1 and -1 every segment
+
+  #{$p1} {
+    transform:
+      skew(12deg) rotate(5deg) translateY($y1) scaleY(1) scaleX($prev);
+  }
+
+  #{$p2} {
+    transform:
+      skew(12deg) rotate(5deg) translateY($y2) scaleY(1) scaleX($next);
+  }
+}
+
+100% {
+  transform:
+    skew(12deg) rotate(5deg) translateY(-50%) scaleY(1) scaleX(if(49 % 2==0, 1, -1));
+}
+}
+
+@keyframes scanLineRed {
+  0% {
+    transform:
+      rotate3d(0, 1, 0.2, -36deg) translateY(0%) scaleY(1) scaleX(1);
+  }
+
+  @for $i from 1 through 49 {
+    $p1: (
+      $i * 2%) - 0.01%;
+    $p2: $i * 2%;
+    $y1: -0.5 * (($i * 2) - 0.01) + 0%;
+    $y2: -0.5 * $i * 2 + 0%;
+    $prev: if(($i - 1) % 2==0, 1, -1
+    );
+  $next: if($i % 2==0, 1, -1);
+
+  #{$p1} {
+    transform:
+      rotate3d(0, 1, 0.2, -36deg) translateY($y1) scaleY(1) scaleX($prev);
+  }
+
+  #{$p2} {
+    transform:
+      rotate3d(0, 1, 0.2, -36deg) translateY($y2) scaleY(1) scaleX($next);
+  }
+}
+
+100% {
+  transform:
+    rotate3d(0, 1, 0.2, -36deg) translateY(-50%) scaleY(1) scaleX(if(49 % 2==0, 1, -1));
+}
+}
+
+@keyframes scanLineYellow {
+  0% {
+    transform:
+      rotate(14deg) translateY(0) scaleY(1) scaleX(1);
+  }
+
+  @for $i from 1 through 49 {
+    $p1: (
+      $i * 2%) - 0.01%;
+    $p2: $i * 2%;
+    $y1: -0.5 * (($i * 2) - 0.01) + 0%;
+    $y2: -0.5 * $i * 2 + 0%;
+    $prev: if(($i - 1) % 2==0, 1, -1
+    );
+  $next: if($i % 2==0, 1, -1);
+
+  #{$p1} {
+    transform:
+      rotate(14deg) translateY($y1) scaleY(1) scaleX($prev);
+  }
+
+  #{$p2} {
+    transform:
+      rotate(14deg) translateY($y2) scaleY(1) scaleX($next);
+  }
+}
+
+100% {
+  transform:
+    rotate(14deg) translateY(-50%) scaleY(1) scaleX(if(49 % 2==0, 1, -1));
+}
+}
+
+@keyframes lightSkills {
+  0%, 100% {
+    opacity: .65;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+// RIGHT SIDE => terminal.scss
+

@@ -1,0 +1,239 @@
+@use '../tools/tools' as *;
+
+.subtitle {
+  color: $subtitle-color;
+  font-size: 1.3vw;
+  margin-top: 2vw;
+  font-weight: 400;
+  letter-spacing: 1px;
+  animation: blinking 2s linear infinite;
+
+  @include breakpoint(1080px) {
+    font-size: 14px;
+  }
+
+  @include breakpoint(wide) {
+    margin-top: 29px;
+  }
+}
+
+@keyframes blinking {
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.carousel {
+  overflow: hidden;
+  // Background ----
+  border-top: 2px solid $border-carousel-color;
+  border-bottom: 2px solid $border-carousel-color;
+  width: 100%;
+  margin-top: 32px;
+  position: relative;
+  z-index: 1;
+  background:
+    linear-gradient(0deg,
+      transparent 0%,
+      rgba($bg-carousel-color, 1) 25%,
+      rgba($bg-carousel-color, 1) 75%,
+      transparent 100%),
+    repeating-linear-gradient(to bottom,
+      $bg-carousel-motif-color 0px,
+      $bg-carousel-motif-color 2px,
+      transparent 2px,
+      transparent 4px),
+    $bg-carousel-color ;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 48px;
+  min-height: 10.4vw;
+
+  @include breakpoint(wide) {
+    min-height: 150px;
+  }
+}
+
+.carousel-item {
+  position: relative;
+  z-index: 1;
+  height: auto;
+  display: block;
+
+  &,
+  .carousel-item--logo,
+  .carousel-item--fx {
+    max-width: 230px;
+  }
+}
+
+.carousel-item--logo {
+  position: relative;
+  z-index: 1;
+  opacity: .9;
+  // @media (hover: hover) {
+  //   opacity: 0;
+  // }
+}
+
+.carousel-item--fx {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  opacity: .6;
+  z-index: 0;
+}
+
+// Glitch FX
+.glitch-wrapper {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.strip {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+
+  animation-name: glitch-move;
+  animation-iteration-count: infinite, infinite;
+  animation-direction: alternate, normal;
+  animation-timing-function: linear, linear;
+
+  animation-duration: var(--duration-move, .25s);
+  animation-delay: var(--delay-move, 0s);
+  animation-play-state: running;
+}
+
+.carousel-item {
+  &:hover {
+    .carousel-item--logo {
+      opacity: 0;
+    }
+
+    .glitch-wrapper {
+      opacity: .9;
+    }
+
+    .carousel-item--fx {
+      animation: shadow-glitch 1.2s infinite;
+    }
+  }
+}
+
+@keyframes glitch-move {
+
+  0%,
+  32.9%,
+  66.1%,
+  100% {
+    transform: translateX(0);
+  }
+
+  33%,
+  66% {
+    transform: translateX(var(--move-x));
+  }
+}
+
+@keyframes shadow-glitch {
+  0% {
+    transform: skewX(-20deg);
+  }
+
+  10% {
+    transform: skewX(-20deg);
+  }
+
+  10.1% {
+    transform: skewX(20deg);
+  }
+
+  20% {
+    transform: skewX(20deg);
+  }
+
+  20.1% {
+    transform: skewX(-20deg);
+  }
+
+  30% {
+    transform: skewX(-20deg);
+  }
+
+  30.1% {
+    transform: skewX(20deg);
+  }
+
+  40% {
+    transform: skewX(20deg);
+  }
+
+  40.1% {
+    transform: skewX(-20deg);
+  }
+
+  50% {
+    transform: skewX(-20deg);
+  }
+
+  50.1% {
+    transform: skewX(20deg);
+  }
+
+  60% {
+    transform: skewX(20deg);
+  }
+
+  60.1% {
+    transform: skewX(-20deg);
+  }
+
+  70% {
+    transform: skewX(-20deg);
+  }
+
+  70.1% {
+    transform: skewX(20deg);
+  }
+
+  80% {
+    transform: skewX(20deg);
+  }
+
+  80.1% {
+    transform: skewX(-80deg);
+  }
+
+  90% {
+    transform: skewX(-80deg);
+  }
+
+  90.1% {
+    transform: skewX(20deg);
+  }
+
+  100% {
+    transform: skewX(20deg);
+  }
+}
+
+//  33% {
+//     transform: skewX(-80deg);
+//   }
+//   45% {
+//     transform: skewX(-80deg);
+//   }

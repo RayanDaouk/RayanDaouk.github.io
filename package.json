@@ -1,0 +1,23 @@
+{
+  "name": "cvweb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch scss/main.scss css/main.css",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.89.2",
+    "vite": "^7.0.0"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0"
+  }
+}
