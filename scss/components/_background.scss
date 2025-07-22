@@ -18,16 +18,16 @@ body {
 
 .patern {
   background:
-    url('../../assets/background/patern-components.png') repeat,
-    url('../../assets/background/patern-circuit.png') repeat;
+    url('/assets/background/patern-components.png') repeat,
+    url('/assets/background/patern-circuit.png') repeat;
   z-index: 0;
   background-position: 20% top;
 }
 
 .mask-patern {
   z-index: 1;
-  mask: url('../../assets/background/mask-patern-circuit.png') repeat;
-  -webkit-mask: url('../../assets/background/mask-patern-circuit.png') repeat;
+  mask: url('/assets/background/mask-patern-circuit.png') repeat;
+  -webkit-mask: url('/assets/background/mask-patern-circuit.png') repeat;
   mask-size: auto;
   -webkit-mask-size: auto;
   overflow: hidden;
@@ -53,14 +53,17 @@ body {
     opacity: 0;
     animation: wave 1s ease;
     aspect-ratio: 1/1;
+
     @keyframes wave {
       0% {
         opacity: 1;
         transform: translate(-50%, -50%);
       }
+
       85% {
         opacity: 1;
       }
+
       100% {
         opacity: 0;
         width: 115vw;
@@ -81,6 +84,7 @@ body {
       rgba($bg-gradient-color, 1) 95%,
       rgba($bg-gradient-color, 1) 100%);
 }
+
 .wrapper-cv {
   background-color: $background-color;
 }

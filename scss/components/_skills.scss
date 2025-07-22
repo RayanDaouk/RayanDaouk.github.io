@@ -5,6 +5,7 @@
   user-select: none;
   display: flex;
   padding-left: 4vw;
+
   @include breakpoint(wide) {
     padding-left: 58px;
   }
@@ -33,6 +34,7 @@
   height: auto;
   z-index: 0;
 }
+
 .skills--light {
   animation: lightSkills 4s linear infinite;
 }
@@ -174,8 +176,8 @@
   }
 
   &#tv-red {
-    mask-image: url('../../assets/skills/masks/masktv1.svg');
-    -webkit-mask-image: url('../../assets/skills/masks/masktv1.svg');
+    mask-image: url('/assets/skills/masks/masktv1.svg');
+    -webkit-mask-image: url('/assets/skills/masks/masktv1.svg');
 
     .skills--pixels--monitor {
       top: 11%;
@@ -201,8 +203,8 @@
   }
 
   &#tv-blue {
-    mask-image: url('../../assets/skills/masks/masktv2.svg');
-    -webkit-mask-image: url('../../assets/skills/masks/masktv2.svg');
+    mask-image: url('/assets/skills/masks/masktv2.svg');
+    -webkit-mask-image: url('/assets/skills/masks/masktv2.svg');
 
     .skills--pixels--monitor {
       top: 36.5%;
@@ -228,8 +230,8 @@
   }
 
   &#tv-yellow {
-    mask-image: url('../../assets/skills/masks/masktv3.svg');
-    -webkit-mask-image: url('../../assets/skills/masks/masktv3.svg');
+    mask-image: url('/assets/skills/masks/masktv3.svg');
+    -webkit-mask-image: url('/assets/skills/masks/masktv3.svg');
 
     .skills--pixels--monitor {
       bottom: 15%;
@@ -462,13 +464,15 @@
 }
 
 @keyframes lightSkills {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: .65;
   }
+
   50% {
     opacity: 1;
   }
 }
 
 // RIGHT SIDE => terminal.scss
-

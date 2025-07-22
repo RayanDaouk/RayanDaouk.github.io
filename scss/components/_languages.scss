@@ -10,7 +10,8 @@
 #languages {
   margin-top: 6%;
   gap: 2vw;
-    @include breakpoint(wide) {
+
+  @include breakpoint(wide) {
     gap: 29px;
   }
 }

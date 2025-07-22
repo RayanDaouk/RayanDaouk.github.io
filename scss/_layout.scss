@@ -13,6 +13,7 @@ footer {
   position: relative;
   z-index: 1;
 }
+
 #bg-layer {
   position: absolute;
   z-index: 0;
@@ -25,19 +26,23 @@ footer {
 h1 {
   width: 50%;
   max-width: 540px;
+
   &,
   img {
-   margin: 0 auto;
+    margin: 0 auto;
   }
+
   img {
     display: block;
     padding-top: 7vh;
     width: 100%;
     height: auto;
+
     @include breakpoint(wide) {
       padding-top: 60px;
     }
   }
+
   small {
     margin: 0 auto;
     display: block;
