@@ -1,3 +1,5 @@
+import '../css/main.css';
+
 import { wave } from './power-bg.js';
 wave();
 
