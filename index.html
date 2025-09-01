@@ -1,144 +1,361 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mon CV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" crossorigin src="/assets/main-Bm0eAlcX.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/style.css">
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Mon CV</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="module" crossorigin src="/assets/main-Bm0eAlcX.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/style.css">
-</head>
-
-<body>
-  <div class="retro--wrapper">
-    <img class="screen-layer" id="screen-border" src="/assets/screen/screen-border.png" alt="" aria-hidden="true">
-    <img class="screen-layer" id="cristals" src="/assets/screen/cristals.png" alt="" aria-hidden="true">
-    <div class="screen-layer" id="scanline"></div>
-    <div id="cursor" class="is-pointer">
-      <img id="pointer" src="/assets/cursors/pointer.png" alt="" aria-hidden="true">
-      <img id="clickable" src="/assets/cursors/clickable.png" alt="" aria-hidden="true">
-    </div>
-    <div class="mobile">
-      <div class="dino-wrapper">
-        <img id="dino" class="dino" src="/assets/screen/dino.png" alt="" aria-hidden="true">
-        <img id="dino-roar" class="dino" src="/assets/screen/dino-roar.png" alt="" aria-hidden="true">
-        <div id="dino-txt">
-          <div>G</div>
-          <div>r</div>
-          <div>r</div>
-          <div>r</div>
-          <div>r</div>
-        </div>
+  <body>
+    <div class="retro--wrapper">
+      <img
+        class="screen-layer"
+        id="screen-border"
+        src="/assets/screen/screen-border.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        class="screen-layer"
+        id="cristals"
+        src="/assets/screen/cristals.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <div class="screen-layer" id="scanline"></div>
+      <div id="cursor" class="is-pointer">
+        <img
+          id="pointer"
+          src="/assets/cursors/pointer.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          id="clickable"
+          src="/assets/cursors/clickable.png"
+          alt=""
+          aria-hidden="true"
+        />
       </div>
-      <p class="title">Oups!</p>
-      <p>Ce cv n'est pour le moment pas disponible pour les téléphones ni les tablettes.<br>
-        Veuillez vous connecter à un ordinateur.
-      </p>
-      <p class="ps">Ps: attention, le dinosaure mord.</p>
-    </div>
-  </div>
-  <div class="wrapper-cv">
-    <div id="scrollbar--wrapper">
-      <div id="scrollbar"></div>
-    </div>
-    <div class="gradient-limit"></div>
-    <header>
-      <h1>
-        <img src="/assets/rayan.png" alt="Rayan Daouk, Developpeur Front-End">
-        <small class="subtitle">Developpeur Front-End</small>
-      </h1>
-      <div class="carousel" id="header-carousel">
-        <div class="carousel-wrapper" id="carousel-wrapper">
-          <a class="carousel-item" href="https://atwork.safeonweb.be/fr" target="_blank">
-            <img class="carousel-item--logo" src="/assets/carousel/ccb.png" alt="CCB @ work" loading="eager">
-            <img class="carousel-item--fx" src="/assets/carousel/ccb-fx.png" alt="CCB @ work" loading="eager">
-          </a>
-          <a class="carousel-item" href="https://www.leonidas.com/be_fr" target="_blank">
-            <img class="carousel-item--logo" src="/assets/carousel/leonidas.png" alt="Leonidas" loading="eager">
-            <img class="carousel-item--fx" src="/assets/carousel/leonidas-fx.png" alt="Leonidas" loading="eager">
-          </a>
-          <a class="carousel-item" href="https://www.huderf.be/fr" target="_blank">
-            <img class="carousel-item--logo" src="/assets/carousel/huderf.png"
-              alt="Un monde de soins dedie à nos jeunes patients | Hôpital Universitaire des Enfants Reine Fabiola" loading="eager">
-            <img class="carousel-item--fx" src="/assets/carousel/huderf-fx.png"
-              alt="Un monde de soins dedie à nos jeunes patients | Hôpital Universitaire des Enfants Reine Fabiola" loading="eager">
-          </a>
-          <a class="carousel-item" href="https://www.hubruxelles.be/fr" target="_blank">
-            <img class="carousel-item--logo" src="/assets/carousel/erasme.png"
-              alt="Hôpital Universitaire de Bruxelles | Hôpital Universitaire de Bruxelles" loading="eager">
-            <img class="carousel-item--fx" src="/assets/carousel/erasme-fx.png"
-              alt="Hôpital Universitaire de Bruxelles | Hôpital Universitaire de Bruxelles" loading="eager">
-          </a>
-          <a class="carousel-item" href="https://www.septmille.be" target="_blank">
-            <img class="carousel-item--logo" src="/assets/carousel/septmille.png" alt="Septmille" loading="eager">
-            <img class="carousel-item--fx" src="/assets/carousel/septmille-fx.png" alt="Septmille" loading="eager">
-          </a>
-          <!-- Clone for infinit loop -->
-          <a class="carousel-item" href="https://atwork.safeonweb.be/fr" target="_blank">
-            <img class="carousel-item--logo" src="/assets/carousel/ccb.png" alt="CCB @ work" loading="eager">
-            <img class="carousel-item--fx" src="/assets/carousel/ccb-fx.png" alt="CCB @ work" loading="eager">
-          </a>
-          <a class="carousel-item" href="https://www.leonidas.com/be_fr" target="_blank">
-            <img class="carousel-item--logo" src="/assets/carousel/leonidas.png" alt="Leonidas" loading="eager">
-            <img class="carousel-item--fx" src="/assets/carousel/leonidas-fx.png" alt="Leonidas" loading="eager">
-          </a>
-          <a class="carousel-item" href="https://www.huderf.be/fr" target="_blank">
-            <img class="carousel-item--logo" src="/assets/carousel/huderf.png"
-              alt="Un monde de soins dedie à nos jeunes patients | Hôpital Universitaire des Enfants Reine Fabiola" loading="eager">
-            <img class="carousel-item--fx" src="/assets/carousel/huderf-fx.png"
-              alt="Un monde de soins dedie à nos jeunes patients | Hôpital Universitaire des Enfants Reine Fabiola" loading="eager">
-          </a>
-          <a class="carousel-item" href="https://www.hubruxelles.be/fr" target="_blank">
-            <img class="carousel-item--logo" src="/assets/carousel/erasme.png"
-              alt="Hôpital Universitaire de Bruxelles | Hôpital Universitaire de Bruxelles" loading="eager">
-            <img class="carousel-item--fx" src="/assets/carousel/erasme-fx.png"
-              alt="Hôpital Universitaire de Bruxelles | Hôpital Universitaire de Bruxelles" loading="eager">
-          </a>
-          <a class="carousel-item" href="https://www.septmille.be" target="_blank">
-            <img class="carousel-item--logo" src="/assets/carousel/septmille.png" alt="Septmille" loading="eager">
-            <img class="carousel-item--fx" src="/assets/carousel/septmille-fx.png" alt="Septmille" loading="eager">
-          </a>
+      <div class="mobile">
+        <div class="dino-wrapper">
+          <img
+            id="dino"
+            class="dino"
+            src="/assets/screen/dino.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <img
+            id="dino-roar"
+            class="dino"
+            src="/assets/screen/dino-roar.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <div id="dino-txt">
+            <div>G</div>
+            <div>r</div>
+            <div>r</div>
+            <div>r</div>
+            <div>r</div>
+          </div>
         </div>
+        <p class="title">Oups!</p>
+        <p>
+          Ce cv n'est pour le moment pas disponible pour les téléphones ni les
+          tablettes.<br />
+          Veuillez vous connecter à un ordinateur.
+        </p>
+        <p class="ps">Ps: attention, le dinosaure mord.</p>
       </div>
-    </header>
-    <main>
-      <section class="stacks">
-        <div class="stack">
-          <img class="stack--logo" id="drupal" src="/assets/stacks/drupal.png" alt="Drupal 8+">
-          <p>Drupal 8+</p>
+    </div>
+    <div class="wrapper-cv">
+      <div id="scrollbar--wrapper">
+        <div id="scrollbar"></div>
+      </div>
+      <div class="gradient-limit"></div>
+      <header>
+        <h1>
+          <img
+            src="/assets/rayan.png"
+            alt="Rayan Daouk, Developpeur Front-End"
+          />
+          <small class="subtitle">Developpeur Front-End</small>
+        </h1>
+        <div class="carousel" id="header-carousel">
+          <div class="carousel-wrapper" id="carousel-wrapper">
+            <a
+              class="carousel-item"
+              href="https://atwork.safeonweb.be/fr"
+              target="_blank"
+            >
+              <img
+                class="carousel-item--logo"
+                src="/assets/carousel/ccb.png"
+                alt="CCB @ work"
+                loading="eager"
+              />
+              <img
+                class="carousel-item--fx"
+                src="/assets/carousel/ccb-fx.png"
+                alt="CCB @ work"
+                loading="eager"
+              />
+            </a>
+            <a
+              class="carousel-item"
+              href="https://www.leonidas.com/be_fr"
+              target="_blank"
+            >
+              <img
+                class="carousel-item--logo"
+                src="/assets/carousel/leonidas.png"
+                alt="Leonidas"
+                loading="eager"
+              />
+              <img
+                class="carousel-item--fx"
+                src="/assets/carousel/leonidas-fx.png"
+                alt="Leonidas"
+                loading="eager"
+              />
+            </a>
+            <a
+              class="carousel-item"
+              href="https://www.huderf.be/fr"
+              target="_blank"
+            >
+              <img
+                class="carousel-item--logo"
+                src="/assets/carousel/huderf.png"
+                alt="Un monde de soins dedie à nos jeunes patients | Hôpital Universitaire des Enfants Reine Fabiola"
+                loading="eager"
+              />
+              <img
+                class="carousel-item--fx"
+                src="/assets/carousel/huderf-fx.png"
+                alt="Un monde de soins dedie à nos jeunes patients | Hôpital Universitaire des Enfants Reine Fabiola"
+                loading="eager"
+              />
+            </a>
+            <a
+              class="carousel-item"
+              href="https://www.hubruxelles.be/fr"
+              target="_blank"
+            >
+              <img
+                class="carousel-item--logo"
+                src="/assets/carousel/erasme.png"
+                alt="Hôpital Universitaire de Bruxelles | Hôpital Universitaire de Bruxelles"
+                loading="eager"
+              />
+              <img
+                class="carousel-item--fx"
+                src="/assets/carousel/erasme-fx.png"
+                alt="Hôpital Universitaire de Bruxelles | Hôpital Universitaire de Bruxelles"
+                loading="eager"
+              />
+            </a>
+            <a
+              class="carousel-item"
+              href="https://www.septmille.be"
+              target="_blank"
+            >
+              <img
+                class="carousel-item--logo"
+                src="/assets/carousel/septmille.png"
+                alt="Septmille"
+                loading="eager"
+              />
+              <img
+                class="carousel-item--fx"
+                src="/assets/carousel/septmille-fx.png"
+                alt="Septmille"
+                loading="eager"
+              />
+            </a>
+            <!-- Clone for infinit loop -->
+            <a
+              class="carousel-item"
+              href="https://atwork.safeonweb.be/fr"
+              target="_blank"
+            >
+              <img
+                class="carousel-item--logo"
+                src="/assets/carousel/ccb.png"
+                alt="CCB @ work"
+                loading="eager"
+              />
+              <img
+                class="carousel-item--fx"
+                src="/assets/carousel/ccb-fx.png"
+                alt="CCB @ work"
+                loading="eager"
+              />
+            </a>
+            <a
+              class="carousel-item"
+              href="https://www.leonidas.com/be_fr"
+              target="_blank"
+            >
+              <img
+                class="carousel-item--logo"
+                src="/assets/carousel/leonidas.png"
+                alt="Leonidas"
+                loading="eager"
+              />
+              <img
+                class="carousel-item--fx"
+                src="/assets/carousel/leonidas-fx.png"
+                alt="Leonidas"
+                loading="eager"
+              />
+            </a>
+            <a
+              class="carousel-item"
+              href="https://www.huderf.be/fr"
+              target="_blank"
+            >
+              <img
+                class="carousel-item--logo"
+                src="/assets/carousel/huderf.png"
+                alt="Un monde de soins dedie à nos jeunes patients | Hôpital Universitaire des Enfants Reine Fabiola"
+                loading="eager"
+              />
+              <img
+                class="carousel-item--fx"
+                src="/assets/carousel/huderf-fx.png"
+                alt="Un monde de soins dedie à nos jeunes patients | Hôpital Universitaire des Enfants Reine Fabiola"
+                loading="eager"
+              />
+            </a>
+            <a
+              class="carousel-item"
+              href="https://www.hubruxelles.be/fr"
+              target="_blank"
+            >
+              <img
+                class="carousel-item--logo"
+                src="/assets/carousel/erasme.png"
+                alt="Hôpital Universitaire de Bruxelles | Hôpital Universitaire de Bruxelles"
+                loading="eager"
+              />
+              <img
+                class="carousel-item--fx"
+                src="/assets/carousel/erasme-fx.png"
+                alt="Hôpital Universitaire de Bruxelles | Hôpital Universitaire de Bruxelles"
+                loading="eager"
+              />
+            </a>
+            <a
+              class="carousel-item"
+              href="https://www.septmille.be"
+              target="_blank"
+            >
+              <img
+                class="carousel-item--logo"
+                src="/assets/carousel/septmille.png"
+                alt="Septmille"
+                loading="eager"
+              />
+              <img
+                class="carousel-item--fx"
+                src="/assets/carousel/septmille-fx.png"
+                alt="Septmille"
+                loading="eager"
+              />
+            </a>
+          </div>
         </div>
-        <div class="stack">
-          <img class="stack--logo" id="gulp" src="/assets/stacks/gulp.png" alt="Gulp">
-          <p>Gulp</p>
-        </div>
-        <div class="stack">
-          <img class="stack--logo" id="webpack" src="/assets/stacks/webpack.png" alt="Webpack">
-          <p>Webpack</p>
-        </div>
-        <div class="stack">
-          <img class="stack--logo" id="npm" src="/assets/stacks/npm.png" alt="Npm">
-          <P>Npm</P>
-        </div>
-        <div class="stack">
-          <img class="stack--logo" id="gsap" src="/assets/stacks/gsap.png" alt="Gsap library">
-          <p>GreenSock</p>
-        </div>
-        <div class="stack">
-          <img class="stack--logo" id="reactjs" src="/assets/stacks/reactJS.png" alt="ReactJS">
-          <p>ReactJS</p>
-        </div>
-        <div class="stack">
-          <img class="stack--logo" id="photoshop" src="/assets/stacks/photoshop.png" alt="Photoshop">
-          <p>Photoshop</p>
-        </div>
-      </section>
-      <section id="skills">
-        <div id="skills--left-side">
-          <div class="skills-layer" id="skills--collisions">
-            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="793.000000pt" height="963.000000pt"
-              viewBox="0 0 793.000000 963.000000" preserveAspectRatio="xMidYMid meet">
-              <g transform="translate(0.000000,963.000000) scale(0.100000,-0.100000)" fill="transparent" stroke="none">
-                <path id="btn-skill-html" d="M3605 8860 c-49 -10 -135 -26 -190 -35 -55 -9 -149 -27 -210 -40 -60
+      </header>
+      <main>
+        <section class="stacks">
+          <div class="stack">
+            <img
+              class="stack--logo"
+              id="drupal"
+              src="/assets/stacks/drupal.png"
+              alt="Drupal 8+"
+            />
+            <p>Drupal 8+</p>
+          </div>
+          <div class="stack">
+            <img
+              class="stack--logo"
+              id="gulp"
+              src="/assets/stacks/gulp.png"
+              alt="Gulp"
+            />
+            <p>Gulp</p>
+          </div>
+          <div class="stack">
+            <img
+              class="stack--logo"
+              id="webpack"
+              src="/assets/stacks/webpack.png"
+              alt="Webpack"
+            />
+            <p>Webpack</p>
+          </div>
+          <div class="stack">
+            <img
+              class="stack--logo"
+              id="npm"
+              src="/assets/stacks/npm.png"
+              alt="Npm"
+            />
+            <p>Npm</p>
+          </div>
+          <div class="stack">
+            <img
+              class="stack--logo"
+              id="gsap"
+              src="/assets/stacks/gsap.png"
+              alt="Gsap library"
+            />
+            <p>GreenSock</p>
+          </div>
+          <div class="stack">
+            <img
+              class="stack--logo"
+              id="reactjs"
+              src="/assets/stacks/reactJS.png"
+              alt="ReactJS"
+            />
+            <p>ReactJS</p>
+          </div>
+          <div class="stack">
+            <img
+              class="stack--logo"
+              id="photoshop"
+              src="/assets/stacks/photoshop.png"
+              alt="Photoshop"
+            />
+            <p>Photoshop</p>
+          </div>
+        </section>
+        <section id="skills">
+          <div id="skills--left-side">
+            <div class="skills-layer" id="skills--collisions">
+              <svg
+                version="1.0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="793.000000pt"
+                height="963.000000pt"
+                viewBox="0 0 793.000000 963.000000"
+                preserveAspectRatio="xMidYMid meet"
+              >
+                <g
+                  transform="translate(0.000000,963.000000) scale(0.100000,-0.100000)"
+                  fill="transparent"
+                  stroke="none"
+                >
+                  <path
+                    id="btn-skill-html"
+                    d="M3605 8860 c-49 -10 -135 -26 -190 -35 -55 -9 -149 -27 -210 -40 -60
               -13 -159 -31 -220 -40 -60 -9 -141 -23 -180 -30 -38 -8 -99 -19 -135 -24 -119
               -18 -284 -50 -335 -65 -27 -8 -94 -26 -147 -40 -110 -30 -243 -76 -304 -107
               -37 -19 -42 -26 -48 -65 -3 -24 -3 -49 -1 -56 3 -7 7 -215 9 -463 4 -443 16
@@ -153,260 +370,436 @@
               13 -40 16 -22 4 -40 10 -40 15 0 5 -15 9 -34 9 -21 0 -36 6 -40 15 -3 9 -19
               15 -41 15 -19 0 -35 5 -35 10 0 6 -13 10 -30 10 -16 0 -30 5 -30 10 0 6 -16
               10 -35 10 -19 0 -35 5 -35 10 0 6 -10 10 -23 10 -13 0 -33 9 -45 20 -24 23
-              -42 26 -42 8 0 -9 -2 -10 -8 -2 -23 37 -210 44 -357 14z" />
-                <path id="btn-skill-css" d="M696 6554 c-48 -17 -119 -75 -438 -357 -226 -200 -248 -222 -248
+              -42 26 -42 8 0 -9 -2 -10 -8 -2 -23 37 -210 44 -357 14z"
+                  />
+                  <path
+                    id="btn-skill-css"
+                    d="M696 6554 c-48 -17 -119 -75 -438 -357 -226 -200 -248 -222 -248
               -251 0 -139 98 -1113 164 -1631 24 -192 44 -371 43 -398 0 -26 2 -49 4 -50 2
               -2 472 -11 1043 -19 l1039 -14 324 153 c179 84 331 153 339 153 17 0 16 -9 14
               160 -1 74 -8 180 -16 235 -8 55 -28 267 -44 470 -28 347 -116 1255 -122 1260
               -2 1 -219 36 -483 78 -484 77 -574 90 -1190 172 -187 25 -351 47 -365 50 -14
-              2 -43 -3 -64 -11z" />
-                <path id="btn-skill-js" d="M2517 3563 c-39 -44 -167 -478 -281 -953 -86 -361 -225 -1095 -210
+              2 -43 -3 -64 -11z"
+                  />
+                  <path
+                    id="btn-skill-js"
+                    d="M2517 3563 c-39 -44 -167 -478 -281 -953 -86 -361 -225 -1095 -210
               -1110 15 -15 1137 -359 1534 -470 201 -56 370 -106 375 -110 27 -21 193 -41
               545 -66 212 -15 387 -31 388 -36 2 -4 31 -8 65 -8 l62 0 18 49 c9 26 100 462
               202 967 214 1065 192 960 209 976 10 9 10 15 2 23 -7 5 -23 20 -37 33 -33 29
               -205 91 -574 206 -316 99 -508 143 -1715 396 -234 49 -443 96 -465 104 -54 20
-              -99 20 -118 -1z" />
+              -99 20 -118 -1z"
+                  />
+                </g>
+              </svg>
+            </div>
+            <!-- RED -->
+            <div class="skills-layer skills-fx isOff" id="skills--red-on">
+              <img
+                class="skills--logo"
+                src="/assets/skills/html-logo.png"
+                alt="html logo"
+              />
+              <img
+                class="skills--light"
+                src="/assets/skills/light-red.png"
+                alt="light"
+              />
+              <img
+                class="skills--connectors"
+                src="/assets/skills/connector-red-on.png"
+                alt="connector"
+              />
+            </div>
+            <div class="skills--pixels" id="tv-red">
+              <div class="skills--pixels--monitor"></div>
+              <img src="/assets/skills/pixels-screen.jpg" alt="pixels screen" />
+            </div>
+            <img
+              class="skills--pixels-light"
+              id="monitor-light-red"
+              src="/assets/skills/red-white.png"
+              alt="light"
+            />
+            <!-- BLUE -->
+            <div class="skills-layer skills-fx isOff" id="skills--blue-on">
+              <img
+                class="skills--logo"
+                src="/assets/skills/css-logo.png"
+                alt="css logo"
+              />
+              <img
+                class="skills--light"
+                src="/assets/skills/light-blue.png"
+                alt="light"
+              />
+              <img
+                class="skills--connectors"
+                src="/assets/skills/connector-blue-on.png"
+                alt="connector"
+              />
+            </div>
+            <div class="skills--pixels" id="tv-blue">
+              <div class="skills--pixels--monitor"></div>
+              <img src="/assets/skills/pixels-screen.jpg" alt="pixels screen" />
+            </div>
+            <img
+              class="skills--pixels-light"
+              id="monitor-light-blue"
+              src="/assets/skills/blue-white.png"
+              alt="light"
+            />
+            <!-- YELLOW -->
+            <div class="skills-layer skills-fx isOff" id="skills--yellow-on">
+              <img
+                class="skills--logo"
+                src="/assets/skills/js-logo.png"
+                alt="js logo"
+              />
+              <img
+                class="skills--light"
+                src="/assets/skills/light-yellow.png"
+                alt="light"
+              />
+              <img
+                class="skills--connectors"
+                src="/assets/skills/connector-yellow-on.png"
+                alt="connector"
+              />
+            </div>
+            <div class="skills--pixels" id="tv-yellow">
+              <div class="skills--pixels--monitor"></div>
+              <img src="/assets/skills/pixels-screen.jpg" alt="pixels screen" />
+            </div>
+            <img
+              class="skills--pixels-light"
+              id="monitor-light-yellow"
+              src="/assets/skills/yellow-white.png"
+              alt="light"
+            />
+            <!-- --- -->
+            <img
+              class="skills--televisions"
+              src="/assets/skills/televisions.png"
+              alt="televisions"
+            />
+            <img
+              class="skills--connectors"
+              src="/assets/skills/connectors-terminal.png"
+              alt="connectors"
+            />
+          </div>
+          <div id="skills--right-side">
+            <div class="loader" id="top-loader">
+              <div class="side top">
+                <div class="circle"></div>
+              </div>
+              <div class="side right">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+              </div>
+              <div class="side bottom">
+                <div class="circle"></div>
+              </div>
+              <div class="side left">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+              </div>
+            </div>
+            <div class="skills-terminal--content">
+              <div id="terminal-indentation"></div>
+              <div id="terminal-txt">
+                <div class="txt-content--hidding">
+                  <div id="red-content"></div>
+                </div>
+                <div class="txt-content--hidding">
+                  <div id="blue-content"></div>
+                </div>
+                <div class="txt-content--hidding">
+                  <div id="yellow-content"></div>
+                </div>
+              </div>
+            </div>
+            <img
+              class="skills-terminal"
+              id="terminal"
+              src="/assets/skills/terminal.png"
+              alt="Terminal"
+            />
+          </div>
+        </section>
+        <section id="experience">
+          <img
+            class="experiences--terminal"
+            id="terminal-prise"
+            src="/assets/experiences/terminal-xp-prise.png"
+            alt="terminal connector"
+          />
+          <div class="timeline">
+            <svg
+              id="cable-svg"
+              width="100%"
+              height="100%"
+              style="position: absolute; top: 0; left: 0; pointer-events: none"
+            >
+              <g id="cable-group">
+                <path
+                  id="cable-path"
+                  fill="none"
+                  stroke="yellow"
+                  stroke-width="3"
+                />
               </g>
             </svg>
+            <img
+              class="circuit--prise"
+              id="prise"
+              src="/assets/experiences/prise.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <div id="fix-rope"></div>
+            <img
+              class="circuit--xp"
+              id="circuit"
+              src="/assets/experiences/circuit-xp.png"
+              alt="time line of experiences"
+            />
+            <div id="circuit--xp-power"></div>
+            <div class="circuit--xp-bg"></div>
           </div>
-          <!-- RED -->
-          <div class="skills-layer skills-fx isOff" id="skills--red-on">
-            <img class="skills--logo" src="/assets/skills/html-logo.png" alt="html logo">
-            <img class="skills--light" src="/assets/skills/light-red.png" alt="light">
-            <img class="skills--connectors" src="/assets/skills/connector-red-on.png" alt="connector">
-          </div>
-          <div class="skills--pixels" id="tv-red">
-            <div class="skills--pixels--monitor"></div>
-            <img src="/assets/skills/pixels-screen.jpg" alt="pixels screen">
-          </div>
-          <img class="skills--pixels-light" id="monitor-light-red" src="/assets/skills/red-white.png" alt="light">
-          <!-- BLUE -->
-          <div class="skills-layer skills-fx isOff" id="skills--blue-on">
-            <img class="skills--logo" src="/assets/skills/css-logo.png" alt="css logo">
-            <img class="skills--light" src="/assets/skills/light-blue.png" alt="light">
-            <img class="skills--connectors" src="/assets/skills/connector-blue-on.png" alt="connector">
-          </div>
-          <div class="skills--pixels" id="tv-blue">
-            <div class="skills--pixels--monitor"></div>
-            <img src="/assets/skills/pixels-screen.jpg" alt="pixels screen">
-          </div>
-          <img class="skills--pixels-light" id="monitor-light-blue" src="/assets/skills/blue-white.png" alt="light">
-          <!-- YELLOW -->
-          <div class="skills-layer skills-fx isOff" id="skills--yellow-on">
-            <img class="skills--logo" src="/assets/skills/js-logo.png" alt="js logo">
-            <img class="skills--light" src="/assets/skills/light-yellow.png" alt="light">
-            <img class="skills--connectors" src="/assets/skills/connector-yellow-on.png" alt="connector">
-          </div>
-          <div class="skills--pixels" id="tv-yellow">
-            <div class="skills--pixels--monitor"></div>
-            <img src="/assets/skills/pixels-screen.jpg" alt="pixels screen">
-          </div>
-          <img class="skills--pixels-light" id="monitor-light-yellow" src="/assets/skills/yellow-white.png" alt="light">
-          <!-- --- -->
-          <img class="skills--televisions" src="/assets/skills/televisions.png" alt="televisions">
-          <img class="skills--connectors" src="/assets/skills/connectors-terminal.png" alt="connectors">
-        </div>
-        <div id="skills--right-side">
-          <div class="loader" id="top-loader">
-            <div class="side top">
-              <div class="circle"></div>
+          <div class="experiences--infos">
+            <div class="infos--nav">
+              <button id="top--nav" role="button">
+                <img
+                  class="btn-icon"
+                  src="/assets/experiences/btn-up-icon.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </button>
+              <button id="bottom--nav" role="button">
+                <img
+                  class="btn-icon"
+                  src="/assets/experiences/btn-down-icon.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </button>
             </div>
-            <div class="side right">
-              <div class="circle"></div>
-              <div class="circle"></div>
-              <div class="circle"></div>
-            </div>
-            <div class="side bottom">
-              <div class="circle"></div>
-            </div>
-            <div class="side left">
-              <div class="circle"></div>
-              <div class="circle"></div>
-              <div class="circle"></div>
-            </div>
-          </div>
-          <div class="skills-terminal--content">
-            <div id="terminal-indentation">
-            </div>
-            <div id="terminal-txt">
-              <div class="txt-content--hidding">
-                <div id="red-content">
+            <div id="experiences--infos-txt">
+              <div id="experiences--infos-left">
+                <div class="infos-slide--wrapper">
+                  <div class="infos-slide">
+                    <div class="heading">Webstanz</div>
+                    <div class="current-post">En poste</div>
+                  </div>
+                  <div class="infos-slide">
+                    <div class="heading">Bpost</div>
+                  </div>
+                  <div class="infos-slide">
+                    <div class="heading">Les P'tits Espace Theatre</div>
+                  </div>
+                  <div class="infos-slide">
+                    <div class="heading">IDEES-3COM</div>
+                  </div>
+                  <div class="infos-slide">
+                    <div class="heading">KALIFORM</div>
+                  </div>
+                  <div class="infos-slide">
+                    <div class="heading">ALEPS</div>
+                  </div>
                 </div>
               </div>
-              <div class="txt-content--hidding">
-                <div id="blue-content">
-                </div>
-              </div>
-              <div class="txt-content--hidding">
-                <div id="yellow-content">
-                </div>
-              </div>
-            </div>
-          </div>
-          <img class="skills-terminal" id="terminal" src="/assets/skills/terminal.png" alt="Terminal">
-        </div>
-      </section>
-      <section id="experience">
-        <img class="experiences--terminal" id="terminal-prise" src="/assets/experiences/terminal-xp-prise.png"
-          alt="terminal connector">
-        <div class="timeline">
-          <svg id="cable-svg" width="100%" height="100%"
-            style="position: absolute; top: 0; left: 0; pointer-events: none;">
-            <g id="cable-group">
-              <path id="cable-path" fill="none" stroke="yellow" stroke-width="3" />
-            </g>
-          </svg>
-          <img class="circuit--prise" id="prise" src="/assets/experiences/prise.png" alt="" aria-hidden="true">
-          <div id="fix-rope"></div>
-          <img class="circuit--xp" id="circuit" src="/assets/experiences/circuit-xp.png" alt="time line of experiences">
-          <div id="circuit--xp-power"></div>
-          <div class="circuit--xp-bg"></div>
-        </div>
-        <div class="experiences--infos">
-          <div class="infos--nav">
-            <button id="top--nav" role="button">
-              <img class="btn-icon" src="/assets/experiences/btn-up-icon.png" alt="" aria-hidden="true">
-            </button>
-            <button id="bottom--nav" role="button">
-              <img class="btn-icon" src="/assets/experiences/btn-down-icon.png" alt="" aria-hidden="true">
-            </button>
-          </div>
-          <div id="experiences--infos-txt">
-            <div id="experiences--infos-left">
-              <div class="infos-slide--wrapper">
-                <div class="infos-slide">
-                  <div class="heading">Webstanz</div>
-                  <div class="current-post">En poste</div>
-                </div>
-                <div class="infos-slide">
-                  <div class="heading">Bpost</div>
-                </div>
-                <div class="infos-slide">
-                  <div class="heading">Les P'tits Espace Theatre</div>
-                </div>
-                <div class="infos-slide">
-                  <div class="heading">IDEES-3COM</div>
-                </div>
-                <div class="infos-slide">
-                  <div class="heading">KALIFORM</div>
-                </div>
-                <div class="infos-slide">
-                  <div class="heading">ALEPS</div>
-                </div>
-              </div>
-            </div>
-            <div id="experiences--infos-right">
-              <div class="infos-slide--wrapper">
-                <div class="infos-slide">
-                  <div class="heading">Agence web</div>
-                  <p>Developpeur web front end:</p>
-                  <ul>
-                    <li>* Integration des maquettes sur drupal</li>
-                    <li>* Configuration drupal (YML)</li>
-                    <li>* Theming / animations scss / js</li>
-                  </ul>
-                </div>
-                <div class="infos-slide">
-                  <div class="heading">Societe de droit publique</div>
-                  <p>Agent charge de distribution et du contact avec les clients:</p>
-                  <ul>
-                    <li>* Tri du courrier</li>
-                    <li>* Tri des collis</li>
-                    <li>* Distribution</li>
-                    <li>* Courses-poursuites avec les chiens mechants (beaucoup)</li>
-                  </ul>
-                </div>
-                <div class="infos-slide">
-                  <div class="heading">Compagnie theatrale</div>
-                  <p>Charge de communication:</p>
-                  <ul>
-                    <li>* Montage video</li>
-                    <li>* Flyers</li>
-                    <li>* Site internet sous wix (no code)</li>
-                  </ul>
-                </div>
-                <div class="infos-slide">
-                  <div class="heading">Studio d'applications 3D interactives</div>
-                  <p>Infographiste 3D generaliste:</p>
-                  <ul>
-                    <li>* Modelisation 3D</li>
-                    <li>* Textures</li>
-                    <li>* Temps reel</li>
-                    <li>* Serious game</li>
-                  </ul>
-                </div>
-                <div class="infos-slide">
-                  <div class="heading">Agance de coaching</div>
-                  <p>Graphiste 2D:</p>
-                  <ul>
-                    <li>* Realistation d'un jeu de plateau pour le coaching</li>
-                  </ul>
-                </div>
-                <div class="infos-slide">
-                  <div class="heading">Association culturel regroupant tout le nord-pas-de-calais</div>
-                  <p>Infographiste 2D:</p>
-                  <ul>
-                    <li>* Charge de communication</li>
-                    <li>* Realisation de panneaux evenementiels de communication</li>
-                    <li></li>
-                  </ul>
+              <div id="experiences--infos-right">
+                <div class="infos-slide--wrapper">
+                  <div class="infos-slide">
+                    <div class="heading">Agence web</div>
+                    <p>Developpeur web front end:</p>
+                    <ul>
+                      <li>* Integration des maquettes sur drupal</li>
+                      <li>* Configuration drupal (YML)</li>
+                      <li>* Theming / animations scss / js</li>
+                    </ul>
+                  </div>
+                  <div class="infos-slide">
+                    <div class="heading">Societe de droit publique</div>
+                    <p>
+                      Agent charge de distribution et du contact avec les
+                      clients:
+                    </p>
+                    <ul>
+                      <li>* Tri du courrier</li>
+                      <li>* Tri des collis</li>
+                      <li>* Distribution</li>
+                      <li>
+                        * Courses-poursuites avec les chiens mechants (beaucoup)
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="infos-slide">
+                    <div class="heading">Compagnie theatrale</div>
+                    <p>Charge de communication:</p>
+                    <ul>
+                      <li>* Montage video</li>
+                      <li>* Flyers</li>
+                      <li>* Site internet sous wix (no code)</li>
+                    </ul>
+                  </div>
+                  <div class="infos-slide">
+                    <div class="heading">
+                      Studio d'applications 3D interactives
+                    </div>
+                    <p>Infographiste 3D generaliste:</p>
+                    <ul>
+                      <li>* Modelisation 3D</li>
+                      <li>* Textures</li>
+                      <li>* Temps reel</li>
+                      <li>* Serious game</li>
+                    </ul>
+                  </div>
+                  <div class="infos-slide">
+                    <div class="heading">Agence de coaching</div>
+                    <p>Graphiste 2D:</p>
+                    <ul>
+                      <li>
+                        * Realistation d'un jeu de plateau pour le coaching
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="infos-slide">
+                    <div class="heading">
+                      Association culturel regroupant tout le nord-pas-de-calais
+                    </div>
+                    <p>Infographiste 2D:</p>
+                    <ul>
+                      <li>* Charge de communication</li>
+                      <li>
+                        * Realisation de panneaux evenementiels de communication
+                      </li>
+                      <li></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
+            <div id="experiences--duration">
+              <span id="xp-year">3a</span>
+              <span id="xp-month">6m</span>
+            </div>
+            <img
+              class="experiences--light"
+              src="/assets/experiences/xp-light.png"
+              alt="terminal"
+            />
+            <img
+              class="experiences--terminal"
+              src="/assets/experiences/terminal-xp.png"
+              alt="terminal"
+            />
           </div>
-          <div id="experiences--duration">
-            <span id="xp-year">3a</span>
-            <span id="xp-month">6m</span>
+        </section>
+        <section id="languages">
+          <div class="language--wrapper" id="french">
+            <img class="flag" src="/assets/lang/fr.jpg" alt="" />
+            <p>Natif</p>
           </div>
-          <img class="experiences--light" src="/assets/experiences/xp-light.png" alt="terminal">
-          <img class="experiences--terminal" src="/assets/experiences/terminal-xp.png" alt="terminal">
+          <div class="language--wrapper" id="english">
+            <img class="flag" src="/assets/lang/en.jpg" alt="" />
+            <p>Technique</p>
+            <p>Passif</p>
+            <p>Lecture de docs</p>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="icons--wrapper">
+          <a id="link--email" href="mailto:daoukrayan02@gmail.com">
+            <img
+              class="icon envelop"
+              src="/assets/footer/envelope/envelope-face.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="icon envelop icon--layer"
+              src="/assets/footer/envelope/envelope-paper.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="icon envelop icon--layer"
+              src="/assets/footer/envelope/envelope-open.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
+          <a id="link--print" href="cv-papier.pdf" download>
+            <img
+              class="icon print"
+              src="/assets/footer/print/printer-top.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="icon print icon--layer"
+              src="/assets/footer/print/new-paper.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="icon print icon--layer"
+              src="/assets/footer/print/printer.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="icon print icon--layer"
+              src="/assets/footer/print/printer-off.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="icon print icon--layer"
+              src="/assets/footer/print/print-paper.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
+          <a
+            id="link--linkedin"
+            href="https://www.linkedin.com/in/rayan-daouk-4aab731aa/?originalSubdomain=be"
+            target="_blank"
+          >
+            <img
+              class="icon"
+              src="/assets/footer/linkedin/linkedin-recto.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="icon icon--layer"
+              src="/assets/footer/linkedin/linkedin-verso.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
+          <img
+            class="icon permis unlink"
+            src="/assets/footer/permis-b.png"
+            alt=""
+            aria-hidden="true"
+          />
         </div>
-      </section>
-      <section id="languages">
-        <div class="language--wrapper" id="french">
-          <img class="flag" src="/assets/lang/fr.jpg" alt="">
-          <p>Natif</p>
-        </div>
-        <div class="language--wrapper" id="english">
-          <img class="flag" src="/assets/lang/en.jpg" alt="">
-          <p>Technique</p>
-          <p>Passif</p>
-          <p>Lecture de docs</p>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <div class="icons--wrapper">
-        <a id="link--email" href="mailto:daoukrayan02@gmail.com">
-          <img class="icon envelop" src="/assets/footer/envelope/envelope-face.png" alt="" aria-hidden="true">
-          <img class="icon envelop icon--layer" src="/assets/footer/envelope/envelope-paper.png" alt=""
-            aria-hidden="true">
-          <img class="icon envelop icon--layer" src="/assets/footer/envelope/envelope-open.png" alt=""
-            aria-hidden="true">
-        </a>
-        <a id="link--print" href="cv-papier.pdf" download>
-          <img class="icon print" src="/assets/footer/print/printer-top.png" alt="" aria-hidden="true">
-          <img class="icon print icon--layer" src="/assets/footer/print/new-paper.png" alt="" aria-hidden="true">
-          <img class="icon print icon--layer" src="/assets/footer/print/printer.png" alt="" aria-hidden="true">
-          <img class="icon print icon--layer" src="/assets/footer/print/printer-off.png" alt="" aria-hidden="true">
-          <img class="icon print icon--layer" src="/assets/footer/print/print-paper.png" alt="" aria-hidden="true">
-        </a>
-        <a id="link--linkedin" href="https://www.linkedin.com/in/rayan-daouk-4aab731aa/?originalSubdomain=be"
-          target="_blank">
-          <img class="icon" src="/assets/footer/linkedin/linkedin-recto.png" alt="" aria-hidden="true">
-          <img class="icon icon--layer" src="/assets/footer/linkedin/linkedin-verso.png" alt="" aria-hidden="true">
-        </a>
-        <img class="icon permis unlink" src="/assets/footer/permis-b.png" alt="" aria-hidden="true">
-      </div>
-    </footer>
-    <div id="bg-layer">
-      <div class="patern"></div>
-      <div class="mask-patern">
-        <div id="power">
+      </footer>
+      <div id="bg-layer">
+        <div class="patern"></div>
+        <div class="mask-patern">
+          <div id="power"></div>
         </div>
       </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
