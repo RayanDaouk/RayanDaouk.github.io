@@ -1,0 +1,235 @@
+@use "../tools/tools" as *;
+
+.chat--wrapper {
+  display: none;
+  position: fixed;
+  bottom: 13.88vw;
+  right: 13.19vw;
+  z-index: 4;
+  max-width: 25vw;
+  .chat--container {
+    padding: 1.25vw;
+    font-size: 0.8vw;
+    background: linear-gradient(45deg, #304979, #082151);
+  }
+  .text {
+    color: white;
+    line-height: 1.5;
+  }
+
+  .chat--border {
+    $border-size: 0.25vw;
+    position: absolute;
+    display: block;
+    z-index: -1;
+    background: linear-gradient(180deg, #ffffff, #9b9ea3);
+
+    &.border-x {
+      left: 0;
+      top: calc(#{$border-size} / 2 * -1);
+      width: 100%;
+      height: calc(100% + #{$border-size});
+      &:before {
+        $comma-width: 1.52vw;
+        aspect-ratio: 45/42;
+        background-color: #9b9ea3;
+        height: auto;
+        content: "";
+        position: absolute;
+        bottom: -1.417vw;
+        right: 0;
+        background-size: $comma-width auto;
+        width: $comma-width;
+        mask-image: url("/assets/character/bubble-tchat.png");
+        -webkit-mask-image: url("/assets/character/bubble-tchat.png");
+        mask-repeat: no-repeat;
+        mask-position: top;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: top;
+        mask-size: $comma-width;
+        -webkit-mask-size: $comma-width;
+      }
+    }
+    &.border-y {
+      left: calc(#{$border-size} / 2 * -1);
+      top: 0;
+      width: calc(100% + #{$border-size});
+      height: 100%;
+    }
+  }
+
+  .btns--wrapper {
+    margin-top: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8vw;
+    // opacity: 0;
+    // pointer-events: none;
+    transition: opacity 0.35s ease-in-out;
+    button {
+      background-color: transparent;
+      color: white;
+      font-family: "pressStart2p", sans-serif;
+      font-size: 0.6vw;
+      line-height: 1.4;
+      text-align: start;
+      padding: 0.2vw;
+      border: none;
+      display: flex;
+      cursor: pointer;
+      .arrow {
+        display: block;
+        width: fit-content;
+        transform: translateX(0);
+        margin-right: 0.5vw;
+      }
+      &.is-selected {
+        color: #ffe101;
+        .arrow {
+          animation: slideRight 0.5s ease-in-out infinite; // Ajuste la durée selon ton besoin
+        }
+      }
+      @keyframes slideRight {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(0.25vw);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}
+
+.emoticons {
+  position: fixed;
+  bottom: 13.88vw;
+  right: 7.5vw;
+  width: 3.5vw;
+  height: 3.5vw;
+  z-index: 3;
+  transform: translateY(0);
+  transform-origin: bottom left;
+  animation: float 1s linear alternate-reverse infinite;
+  &.spawned {
+    animation: float 1s linear alternate-reverse infinite,
+      spawnEmote 1s ease-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-7%);
+    }
+  }
+  @keyframes spawnEmote {
+    0% {
+      transform: scale(0);
+    }
+    24% {
+      transform: scale(1.3);
+    }
+    36% {
+      transform: scale(0.9);
+    }
+    48% {
+      transform: scale(1.15);
+    }
+    // 60% = .6s
+    60%,
+    100% {
+      transform: scale(1);
+    }
+  }
+  .add {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .emote,
+  .add {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &.blaze {
+    .add {
+      width: 1.25vw;
+      right: -0.8vw;
+      transform: translateY(-25%);
+      animation: waterDrop 1s infinite;
+    }
+    @keyframes waterDrop {
+      0%,
+      25% {
+        transform: translateY(-75%);
+      }
+      25.1%,
+      50% {
+        transform: translateY(-50%);
+      }
+      50.1%,
+      75% {
+        transform: translateY(-25%);
+      }
+      75.1%,
+      100% {
+        transform: translateY(0);
+      }
+    }
+  }
+  &.anger {
+    .add {
+      width: 1vw;
+      right: -0.8vw;
+      transform: translateY(-50%);
+      animation: anger 0.5s infinite alternate-reverse;
+      img:first-child {
+        transform: translateY(0);
+      }
+      img:last-child {
+        margin-bottom: 35%;
+        transform: translateY(0);
+      }
+    }
+    @keyframes anger {
+      0%,
+      33.3% {
+        transform: translateY(-50%);
+      }
+      33.4%,
+      66.6% {
+        transform: translateY(-40%);
+      }
+      66.7%,
+      100% {
+        transform: translateY(-30%);
+      }
+    }
+  }
+  // @keyframes anger02 {
+  //   0%,
+  //   25% {
+  //     transform: translateY(0%);
+  //   }
+  //   25.1%,
+  //   50% {
+  //     transform: translateY(89.3%); // 25% * (25/7) = 89.3%
+  //   }
+  //   50.1%,
+  //   75% {
+  //     transform: translateY(178.6%); // 50% * (25/7) = 178.6%
+  //   }
+  //   75.1%,
+  //   100% {
+  //     transform: translateY(267.9%); // 75% * (25/7) = 267.9%
+  //   }
+  // }
+}
