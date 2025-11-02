@@ -6,7 +6,7 @@
   margin-top: 2vw;
   font-weight: 400;
   letter-spacing: 1px;
-  animation: blinking 2s linear infinite;
+  // animation: blinking 2s linear infinite;
 
   @include breakpoint(1080px) {
     font-size: 14px;
@@ -36,7 +36,7 @@
   border-top: 2px solid $border-carousel-color;
   border-bottom: 2px solid $border-carousel-color;
   width: 100%;
-  margin-top: 32px;
+  margin-top: 2.9%;
   position: relative;
   z-index: 1;
   background:

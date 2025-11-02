@@ -7,3 +7,5 @@ Pour le dev:
 npm run dev
 npm run sass
 
+npm run build
+npm run deploy

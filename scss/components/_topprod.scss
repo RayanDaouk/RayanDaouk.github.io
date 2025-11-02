@@ -1,0 +1,112 @@
+@use "../tools/tools" as *;
+
+.top-prod--wrapper {
+  margin-top: 2.8%;
+  position: relative;
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .top-prod--right,
+  .top-prod--left {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: fit-content;
+    aspect-ratio: 131/78;
+    height: 38.8%;
+    width: 9.8%;
+  }
+
+  .top-prod--right {
+    right: 25%;
+    transform: translateY(-50%) scaleX(-1);
+    animation: arrowRight 2s linear infinite;
+    @keyframes arrowRight {
+      0%,
+      32.99% {
+        right: 10%;
+      }
+      33%,
+      65.99% {
+        right: 20%;
+      }
+      66%,
+      100% {
+        right: 30%;
+      }
+    }
+  }
+  .top-prod--left {
+    animation: arrowLeft 2s linear infinite;
+    @keyframes arrowLeft {
+      0%,
+      32.99% {
+        left: 10%;
+      }
+      33%,
+      65.99% {
+        left: 20%;
+      }
+      66%,
+      100% {
+        left: 30%;
+      }
+    }
+  }
+  .top-prod--sprites {
+    width: 17.35%;
+    height: auto;
+    aspect-ratio: 229/201;
+    margin: 0 auto;
+    position: relative;
+    a {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+  }
+  .arrow-glow,
+  .mouse-glow,
+  .top-prod-glow,
+  .mouse {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .mouse,
+  .mouse-glow {
+    animation: mouse 2s linear infinite;
+
+    @keyframes mouse {
+      0%,
+      65.99% {
+        opacity: 0;
+      }
+
+      66%,
+      100% {
+        opacity: 100%;
+      }
+    }
+  }
+
+  .top-prod-glow {
+    animation: glow 4s ease infinite;
+    @keyframes glow {
+      0% {
+        opacity: 0.5;
+      }
+      45%,
+      55% {
+        opacity: 0.9;
+      }
+      100% {
+        opacity: 0.5;
+      }
+    }
+  }
+}

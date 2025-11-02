@@ -6,6 +6,9 @@ glitch();
 import { wave } from "./power-bg.js";
 wave();
 
+import { topProd } from "./top-prod.js";
+topProd();
+
 import { gsapCarousel } from "./carousel.js";
 gsapCarousel();
 
@@ -39,8 +42,8 @@ import { trackVisitor } from "./cookie.js";
 const isReturning = trackVisitor();
 // const isReturning = false;
 
-import { characterchat } from "./chat.js";
-characterchat(isReturning);
+// import { characterchat } from "./chat.js";
+// characterchat(isReturning);
 
 import { dino } from "./dino.js";
 dino();
