@@ -277,5 +277,5 @@ export function characterchat(isReturning) {
   setTimeout(() => {
     chatWrapper.style.display = "block";
     displayStep(currentStep);
-  }, 0);
+  }, 5000);
 }
