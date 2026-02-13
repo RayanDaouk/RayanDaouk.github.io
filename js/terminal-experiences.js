@@ -1,32 +1,31 @@
 export function experience() {
-  const cursor = document.getElementById('cursor');
+  const cursor = document.getElementById("cursor");
   const translations = [2.7, 19.5, 36, 51.5, 67.5, 86.5];
   const powers = [5, 22, 41, 58, 74, 95];
   let step = 1;
-  const btnTopNav = document.getElementById('bottom--nav');
-  const btnBottomNav = document.getElementById('top--nav');
-  const animateEl = document.getElementById('prise');
-  const power = document.getElementById('circuit--xp-power');
-  const cableEl = document.getElementById('cable-group');
-  const fixedPoint = document.getElementById('fix-rope');
-  const cablePath = document.getElementById('cable-path');
-  const terminalExp = document.getElementById('experiences--infos-txt');
-  const infosExpSliders = document.querySelectorAll('.infos-slide--wrapper');
-  const xpYearSpan = document.getElementById('xp-year');
-  const xpMonthSpan = document.getElementById('xp-month');
+  const btnTopNav = document.getElementById("bottom--nav");
+  const btnBottomNav = document.getElementById("top--nav");
+  const animateEl = document.getElementById("prise");
+  const power = document.getElementById("circuit--xp-power");
+  const cableEl = document.getElementById("cable-group");
+  const fixedPoint = document.getElementById("fix-rope");
+  const cablePath = document.getElementById("cable-path");
+  const terminalExp = document.getElementById("experiences--infos-txt");
+  const infosExpSliders = document.querySelectorAll(".infos-slide--wrapper");
+  const xpYearSpan = document.getElementById("xp-year");
+  const xpMonthSpan = document.getElementById("xp-month");
   let currentSlide = 0;
 
-
   function initSliderItems() {
-    const itemsExp = document.querySelectorAll('.infos-slide');
+    const itemsExp = document.querySelectorAll(".infos-slide");
     itemsExp.forEach((itemExp) => {
-      itemExp.style.height = terminalExp.offsetHeight + 'px';
-    })
+      itemExp.style.height = terminalExp.offsetHeight + "px";
+    });
   }
   initSliderItems();
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     initSliderItems();
-  })
+  });
   let isAnimating = false;
 
   let powerCurve = 40;
@@ -64,10 +63,9 @@ export function experience() {
   let animatedOffsetX = 0;
   let animatedOffsetY = 25;
 
-
   // Paths calculations to generate svg:
   function catmullRom2bezier(points) {
-    if (points.length < 2) return '';
+    if (points.length < 2) return "";
 
     let d = `M ${points[0].x} ${points[0].y}`;
 
@@ -89,20 +87,30 @@ export function experience() {
     return d;
   }
 
-
-
   function trackPosition() {
     const animatedRect = animateEl.getBoundingClientRect();
     const fixedRect = fixedPoint.getBoundingClientRect();
-    const parentRect = document.getElementById('cable-svg').getBoundingClientRect();
+    const parentRect = document
+      .getElementById("cable-svg")
+      .getBoundingClientRect();
 
     // Fixed dot
-    const x1 = fixedRect.left - parentRect.left + fixedRect.width / 2 + fixedOffsetX;
-    const y1 = fixedRect.top - parentRect.top + fixedRect.height / 2 + fixedOffsetY;
+    const x1 =
+      fixedRect.left - parentRect.left + fixedRect.width / 2 + fixedOffsetX;
+    const y1 =
+      fixedRect.top - parentRect.top + fixedRect.height / 2 + fixedOffsetY;
 
     // Animated dot
-    const x2 = animatedRect.left - parentRect.left + animatedRect.width / 2 + animatedOffsetX;
-    const y2 = animatedRect.top - parentRect.top + animatedRect.height / 2 + animatedOffsetY;
+    const x2 =
+      animatedRect.left -
+      parentRect.left +
+      animatedRect.width / 2 +
+      animatedOffsetX;
+    const y2 =
+      animatedRect.top -
+      parentRect.top +
+      animatedRect.height / 2 +
+      animatedOffsetY;
 
     const points = []; // For svg
     // Points generations:
@@ -113,7 +121,7 @@ export function experience() {
     }
 
     const pathD = catmullRom2bezier(points);
-    cablePath.setAttribute('d', pathD);
+    cablePath.setAttribute("d", pathD);
 
     requestAnimationFrame(trackPosition);
   }
@@ -121,7 +129,7 @@ export function experience() {
   trackPosition();
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-      if (mutation.attributeName === 'style') {
+      if (mutation.attributeName === "style") {
         if (!isAnimating) {
           isAnimating = true;
           trackPosition();
@@ -134,26 +142,21 @@ export function experience() {
             xpYearSpan.textContent = `${years}a`;
             xpMonthSpan.textContent = `${months}m`;
           } else if (step === 2) {
-            newPowerCurve = 55;
-            // animDuration = 300;
-            xpYearSpan.textContent = `3a`;
-            xpMonthSpan.textContent = `6m`;
-          } else if (step === 3) {
             newPowerCurve = 70;
             // animDuration = 300;
-            xpYearSpan.textContent = `2a`;
-            xpMonthSpan.textContent = ``;
-          } else if (step === 4) {
+            xpYearSpan.textContent = `5a`;
+            xpMonthSpan.textContent = `6m`;
+          } else if (step === 3) {
             newPowerCurve = 85;
             // animDuration = 300;
             xpYearSpan.textContent = ``;
             xpMonthSpan.textContent = `3m`;
-          } else if (step === 5) {
+          } else if (step === 4) {
             newPowerCurve = 100;
             // animDuration = 300;
             xpYearSpan.textContent = ``;
             xpMonthSpan.textContent = `3m`;
-          } else if (step === 6) {
+          } else if (step === 5) {
             // Don't need to up powerCurve
             xpYearSpan.textContent = ``;
             xpMonthSpan.textContent = `3m`;
@@ -171,12 +174,12 @@ export function experience() {
   });
 
   observer.observe(animateEl, {
-    attributeFilter: ['style']
+    attributeFilter: ["style"],
   });
 
   // Experience duration:
   // xpScreenContent
-  const currentJobStart = new Date('2022-02-01');
+  const currentJobStart = new Date("2022-02-01");
   const currentDate = new Date();
   const totalMonths =
     (currentDate.getFullYear() - currentJobStart.getFullYear()) * 12 +
@@ -187,16 +190,15 @@ export function experience() {
   xpYearSpan.textContent = `${years}a`;
   xpMonthSpan.textContent = `${months}m`;
 
-
-  btnTopNav.addEventListener('click', () => {
+  btnTopNav.addEventListener("click", () => {
     // Timeline
     if (step < translations.length) {
       step += 1;
-      cableEl.classList.add('move-left');
-      cableEl.classList.remove('move-hiddle');
+      cableEl.classList.add("move-left");
+      cableEl.classList.remove("move-hiddle");
       setTimeout(() => {
-        cableEl.classList.remove('move-left');
-        cableEl.classList.add('move-hiddle');
+        cableEl.classList.remove("move-left");
+        cableEl.classList.add("move-hiddle");
       }, 300);
     } else {
       step = translations.length;
@@ -209,19 +211,19 @@ export function experience() {
       currentSlide += 1;
       infosExpSliders.forEach((infosExpSlider) => {
         infosExpSlider.style.transform = `translateY(-${currentSlide * terminalExp.offsetHeight}px)`;
-      })
+      });
     }
   });
 
-  btnBottomNav.addEventListener('click', () => {
+  btnBottomNav.addEventListener("click", () => {
     // Timeline
     if (step > 1) {
       step -= 1;
-      cableEl.classList.add('move-right');
-      cableEl.classList.remove('move-hiddle');
+      cableEl.classList.add("move-right");
+      cableEl.classList.remove("move-hiddle");
       setTimeout(() => {
-        cableEl.classList.remove('move-right');
-        cableEl.classList.add('move-hiddle');
+        cableEl.classList.remove("move-right");
+        cableEl.classList.add("move-hiddle");
       }, 300);
     } else {
       step = 1;
@@ -234,19 +236,19 @@ export function experience() {
       currentSlide -= 1;
       infosExpSliders.forEach((infosExpSlider) => {
         infosExpSlider.style.transform = `translateY(-${currentSlide * terminalExp.offsetHeight}px)`;
-      })
+      });
     }
   });
 
-  [btnTopNav, btnBottomNav].forEach(btn => {
-    btn.addEventListener('mouseenter', () => {
-      cursor.classList.remove('is-pointer');
-      cursor.classList.add('is-clickable');
+  [btnTopNav, btnBottomNav].forEach((btn) => {
+    btn.addEventListener("mouseenter", () => {
+      cursor.classList.remove("is-pointer");
+      cursor.classList.add("is-clickable");
     });
 
-    btn.addEventListener('mouseleave', () => {
-      cursor.classList.add('is-pointer');
-      cursor.classList.remove('is-clickable');
+    btn.addEventListener("mouseleave", () => {
+      cursor.classList.add("is-pointer");
+      cursor.classList.remove("is-clickable");
     });
   });
 }
